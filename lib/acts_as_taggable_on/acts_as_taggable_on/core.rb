@@ -373,7 +373,7 @@ module ActsAsTaggableOn::Taggable
 
           # Find taggings to remove:
           if old_tags.present?
-            old_taggings = taggings.where(:tagger_type => nil, :tagger_id => nil, :context => context.to_s, :tag_id => old_tags)
+            old_taggings = taggings.where(:context => context.to_s, :tag_id => old_tags)
           end
 
           # Destroy old taggings:
